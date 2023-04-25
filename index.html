@@ -6,9 +6,51 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="./styles/null-styles.css">
+    <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
+<div class="wrapper">
 
+    <main class="main">
+
+        <div class="warning hidden">
+        </div>
+
+        <div class="quiz hidden">
+            <h2 class="quiz__header">Test</h2>
+            <div class="quiz__progress">
+                <div class="quiz__progress-inner"></div>
+            </div>
+            <div class="quiz__content">
+                <h3 class="quiz__title"> Question 1</h3>
+                <ul class="quiz__list">
+                    <li class="quiz__option">Answer 1</li>
+                    <li class="quiz__option">Answer 2</li>
+                    <li class="quiz__option">Answer 3</li>
+                    <li class="quiz__option">Answer 4</li>
+                </ul>
+            </div>
+            <div class="quiz__footer">
+                <div class="quiz__total">
+                    1 of 5
+                </div>
+                <button class="quiz__next-btn">Next</button>
+            </div>
+        </div>
+
+        <div class="result hidden">
+            <div class="result__img">
+                <img src="./img/the-end.png" alt="The end">
+            </div>
+            <div class="result__title">You have completed the test</div>
+            <div class="result__text">
+            </div>
+            <div class="result__btn">
+                <a class="result__restart" href="/">Try again</a>
+            </div>
+        </div>
+
+    </main>
+</div>
 </body>
 </html>
