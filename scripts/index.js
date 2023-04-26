@@ -49,13 +49,35 @@ function optionSelected(answer) {
         answer.insertAdjacentHTML('beforeend', iconWrong);
 
         options.forEach(item => {
-            if(item.textContent === correctAnswer) {
+            if (item.textContent === correctAnswer) {
                 setTimeout(() => {
                     item.classList.add('correct');
                     item.insertAdjacentHTML('beforeend', iconCorrect);
                 }, 100);
             }
         });
-        options.forEach(item => item.classList.add('disabled'));
     }
+    options.forEach(item => item.classList.add('disabled'));
+}
+
+btnNext.addEventListener('click', nextQuestion);
+function nextQuestion() {
+    const option = document.querySelector('.quiz__option');
+    const result = document.querySelector('.result');
+    const resultText = document.querySelector('.result__text');
+
+    if((count+1) === questions.length && option.classList.contains('disabled')) {
+        quiz.classList.add('hidden');
+        result.classList.remove('hidden');
+        resultText.innerHTML = `Number of correct answers: ${userScore} of ${questions.length}`;
+        return;
+    }
+
+    if (option.classList.contains('disabled')) {
+        count++;
+        showQuestions(count);
+    } else {
+        alert('Choose one of the options and then move on to the next');
+    }
+
 }
